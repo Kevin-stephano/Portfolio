@@ -1,0 +1,8 @@
+# Fichiers vidéo
+*.mp4
+*.mov
+*.avi
+
+# Autres
+node_modules/
+.DS_Store

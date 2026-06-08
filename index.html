@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de RANDRIANARIVONY Kevin Stephano - Développeur & Monteur Vidéo | ISPM IMTICIA">
+    <meta name="keywords" content="développeur, monteur vidéo, portfolio, ISPM, IMTICIA, Kevin Stephano, web, application, jeu vidéo, IA">
+    <meta name="author" content="RANDRIANARIVONY Kevin Stephano">
+    <title>Kevin Stephano | Développeur & Monteur Vidéo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Cursor Glow Effect -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Particle Background -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>RKS<span class="logo-bracket">/&gt;</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#hero" class="nav-link active">Accueil</a>
+                <a href="#about" class="nav-link">À propos</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#montage" class="nav-link">Montage Vidéo</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text" data-animate="fade-right">
+                <div class="hero-greeting">
+                    <span class="greeting-line"></span>
+                    <span>Bonjour, je suis</span>
+                </div>
+                <h1 class="hero-name" style="font-size: clamp(2rem, 4.2vw, 3.4rem); line-height: 1.1; letter-spacing: -0.5px; font-weight: 800; margin-bottom: 20px;">
+                    <span style="font-size: 0.6em; font-weight: 700; color: var(--text-secondary); display: block; margin-bottom: 6px; letter-spacing: 1px; text-transform: uppercase;">RANDRIANARIVONY</span>
+                    <span class="text-gradient">Kevin Stephano</span>
+                </h1>
+                <div class="hero-typewriter">
+                    <span class="typewriter-prefix">Je suis </span>
+                    <span class="typewriter-text" id="typewriterText"></span>
+                    <span class="typewriter-cursor">|</span>
+                </div>
+                <p class="hero-description">
+                    Étudiant en <strong>IMTICIA</strong> à l'ISPM — Passionné par le développement, 
+                    l'intelligence artificielle et le montage vidéo créatif.
+                </p>
+                <div class="hero-cta">
+                    <a href="#montage" class="btn btn-primary">
+                        <span>Voir mes projets</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <span>Me contacter</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="3">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Projets vidéo</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="4">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Compétences</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="1">0</span>
+                        <span class="stat-label">Passion</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image" data-animate="fade-left">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-glow"></div>
+                    <img src="assets/images/profile.jpg" alt="Kevin Stephano" loading="eager">
+                    <div class="hero-image-border"></div>
+                </div>
+                <div class="floating-badge badge-dev">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 18 22 12 16 6"></polyline>
+                        <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                    <span>Dev</span>
+                </div>
+                <div class="floating-badge badge-video">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                        <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                    </svg>
+                    <span>Vidéo</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" data-animate="fade-up" data-delay="600">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Défiler vers le bas</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">01 // À PROPOS</span>
+                <h2 class="section-title">Qui suis-je<span class="text-gradient"> ?</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-image" data-animate="fade-right">
+                    <div class="about-image-wrapper">
+                        <img src="assets/images/video-editing.jpg" alt="Environnement de montage vidéo">
+                        <div class="about-image-overlay">
+                            <span class="overlay-text">Créativité & Code</span>
+                        </div>
+                    </div>
+                    <div class="about-experience-badge">
+                        <span class="exp-icon">🎓</span>
+                        <div>
+                            <strong>ISPM</strong>
+                            <span>IMTICIA</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text" data-animate="fade-left">
+                    <h3 class="about-subtitle">
+                        Développeur <span class="text-gradient">&</span> Créateur de contenu
+                    </h3>
+                    <p>
+                        Je suis <strong>RANDRIANARIVONY Kevin Stephano</strong>, étudiant à l'<strong>ISPM</strong> 
+                        dans la filière <strong>IMTICIA</strong> (Informatique, Multimédias, Technologie de l'Information, 
+                        de Communication et l'Intelligence Artificielle).
+                    </p>
+                    <p>
+                        Ma passion se situe à l'intersection de la technologie et de la créativité. 
+                        Je conçois des sites web modernes, des applications performantes, des jeux vidéo immersifs 
+                        et des systèmes d'automatisation intelligents. En parallèle, je suis monteur vidéo, 
+                        transformant des séquences brutes en histoires visuelles captivantes.
+                    </p>
+                    <div class="about-skills">
+                        <div class="skill-tag" data-animate="scale">
+                            <span class="skill-icon">🌐</span> Web Dev
+                        </div>
+                        <div class="skill-tag" data-animate="scale">
+                            <span class="skill-icon">📱</span> Apps
+                        </div>
+                        <div class="skill-tag" data-animate="scale">
+                            <span class="skill-icon">🎮</span> Jeux Vidéo
+                        </div>
+                        <div class="skill-tag" data-animate="scale">
+                            <span class="skill-icon">🤖</span> IA & Automation
+                        </div>
+                        <div class="skill-tag" data-animate="scale">
+                            <span class="skill-icon">🎬</span> Montage Vidéo
+                        </div>
+                        <div class="skill-tag" data-animate="scale">
+                            <span class="skill-icon">🎨</span> Design
+                        </div>
+                    </div>
+                    <div class="about-info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Nom</span>
+                            <span class="info-value">RANDRIANARIVONY Kevin Stephano</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Formation</span>
+                            <span class="info-value">ISPM — IMTICIA</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Spécialité</span>
+                            <span class="info-value">Développement & Montage Vidéo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">02 // SERVICES</span>
+                <h2 class="section-title">Ce que je <span class="text-gradient">fais</span></h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-animate="fade-up" data-delay="0">
+                    <div class="service-card-bg"></div>
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="service-title">Développement Web</h3>
+                    <p class="service-desc">Création de sites web modernes, responsive et performants avec les dernières technologies.</p>
+                    <div class="service-tech">
+                        <span>HTML/CSS</span>
+                        <span>JavaScript</span>
+                        <span>PHP</span>
+                    </div>
+                    <div class="service-image">
+                        <img src="assets/images/services-dev.png" alt="Développement Web">
+                    </div>
+                </div>
+
+                <div class="service-card" data-animate="fade-up" data-delay="100">
+                    <div class="service-card-bg"></div>
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="service-title">Applications</h3>
+                    <p class="service-desc">Développement d'applications mobiles et desktop intuitives et fonctionnelles.</p>
+                    <div class="service-tech">
+                        <span>Mobile</span>
+                        <span>Desktop</span>
+                        <span>Cross-Platform</span>
+                    </div>
+                    <div class="service-image">
+                        <img src="assets/images/services-dev.png" alt="Applications">
+                    </div>
+                </div>
+
+                <div class="service-card" data-animate="fade-up" data-delay="200">
+                    <div class="service-card-bg"></div>
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <line x1="6" y1="3" x2="6" y2="15"></line>
+                                <circle cx="18" cy="6" r="3"></circle>
+                                <circle cx="6" cy="18" r="3"></circle>
+                                <path d="M18 9a9 9 0 0 1-9 9"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="service-title">Jeux Vidéo</h3>
+                    <p class="service-desc">Conception et développement de jeux vidéo immersifs avec des mécaniques captivantes.</p>
+                    <div class="service-tech">
+                        <span>Game Design</span>
+                        <span>Unity</span>
+                        <span>2D/3D</span>
+                    </div>
+                    <div class="service-image">
+                        <img src="assets/images/services-game.png" alt="Jeux Vidéo">
+                    </div>
+                </div>
+
+                <div class="service-card" data-animate="fade-up" data-delay="300">
+                    <div class="service-card-bg"></div>
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2a4 4 0 0 1 4 4c0 1.95-1.4 3.58-3.25 3.93"></path>
+                                <path d="M8.56 6c.18-2.2 2.04-3.93 4.32-3.99"></path>
+                                <path d="M12 18v4"></path>
+                                <path d="M8 22h8"></path>
+                                <path d="M7 10h10a2 2 0 0 1 2 2v2a6 6 0 0 1-12 0v-2c0-1.1.9-2 2-2z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="service-title">IA & Automatisation</h3>
+                    <p class="service-desc">Solutions intelligentes basées sur l'IA pour automatiser et optimiser les processus.</p>
+                    <div class="service-tech">
+                        <span>Python</span>
+                        <span>Machine Learning</span>
+                        <span>N8N</span>
+                    </div>
+                    <div class="service-image">
+                        <img src="assets/images/services-ai.png" alt="IA & Automatisation">
+                    </div>
+                </div>
+
+                <div class="service-card service-card-highlight" data-animate="fade-up" data-delay="400">
+                    <div class="service-card-bg"></div>
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                            </svg>
+                        </div>
+                    </div>
+                    <h3 class="service-title">Montage Vidéo</h3>
+                    <p class="service-desc">Montage vidéo professionnel — trailers, clips, contenus créatifs avec effets visuels percutants.</p>
+                    <div class="service-tech">
+                        <span>Premiere Pro</span>
+                        <span>After Effects</span>
+                        <span>KineMaster</span>
+                    </div>
+                    <div class="service-image">
+                        <img src="assets/images/video-editing.jpg" alt="Montage Vidéo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Montage Section -->
+    <section class="section montage" id="montage">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">03 // PORTFOLIO CRÉATIF</span>
+                <h2 class="section-title">Mes <span class="text-gradient">Montages</span></h2>
+                <p class="section-subtitle">Découvrez mes projets de montage vidéo — des trailers aux clips créatifs.</p>
+                <div class="section-line"></div>
+            </div>
+            <div class="montage-grid">
+                <!-- Video 1: Champ Contre Champ -->
+                <div class="video-card" data-animate="fade-up" data-delay="0">
+                    <div class="video-wrapper">
+                        <video 
+                            id="video-1"
+                            src="Champ_Contre_Champ_1.mp4" 
+                            poster=""
+                            preload="metadata"
+                            playsinline
+                        ></video>
+                        <div class="video-overlay" id="overlay-1">
+                            <button class="play-btn" onclick="toggleVideo('video-1', 'overlay-1')" aria-label="Lire la vidéo">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="video-progress">
+                            <div class="video-progress-bar" id="progress-1"></div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-meta">
+                            <span class="video-category">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                    <circle cx="12" cy="13" r="4"></circle>
+                                </svg>
+                                Cinématique
+                            </span>
+                            <span class="video-duration" id="duration-1">--:--</span>
+                        </div>
+                        <h3 class="video-title">Champ Contre Champ</h3>
+                        <p class="video-desc">Exercice cinématographique explorant la technique du champ-contrechamp — cadrage, rythme et narration visuelle.</p>
+                        <div class="video-tags">
+                            <span>Cinéma</span>
+                            <span>Cadrage</span>
+                            <span>Narratif</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 2: Trailer ISPM -->
+                <div class="video-card video-card-featured" data-animate="fade-up" data-delay="100">
+                    <div class="featured-badge">⭐ Projet phare</div>
+                    <div class="video-wrapper">
+                        <video 
+                            id="video-2"
+                            src="Trailler - ISPM(Culte).mp4" 
+                            poster=""
+                            preload="metadata"
+                            playsinline
+                        ></video>
+                        <div class="video-overlay" id="overlay-2">
+                            <button class="play-btn" onclick="toggleVideo('video-2', 'overlay-2')" aria-label="Lire la vidéo">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="video-progress">
+                            <div class="video-progress-bar" id="progress-2"></div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-meta">
+                            <span class="video-category">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                                </svg>
+                                Trailer
+                            </span>
+                            <span class="video-duration" id="duration-2">--:--</span>
+                        </div>
+                        <h3 class="video-title">Trailer — ISPM (Culte)</h3>
+                        <p class="video-desc">Trailer promotionnel réalisé pour l'ISPM — montage dynamique, effets visuels et ambiance cinématographique.</p>
+                        <div class="video-tags">
+                            <span>Trailer</span>
+                            <span>ISPM</span>
+                            <span>Promotionnel</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video 3: TAV Project -->
+                <div class="video-card" data-animate="fade-up" data-delay="200">
+                    <div class="video-wrapper">
+                        <video 
+                            id="video-3"
+                            src="tavProject.mp4" 
+                            poster=""
+                            preload="metadata"
+                            playsinline
+                        ></video>
+                        <div class="video-overlay" id="overlay-3">
+                            <button class="play-btn" onclick="toggleVideo('video-3', 'overlay-3')" aria-label="Lire la vidéo">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="video-progress">
+                            <div class="video-progress-bar" id="progress-3"></div>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-meta">
+                            <span class="video-category">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                                Projet TAV
+                            </span>
+                            <span class="video-duration" id="duration-3">--:--</span>
+                        </div>
+                        <h3 class="video-title">TAV Project Fond Vert</h3>
+                        <p class="video-desc">Projet de Technique Audio-Visuelle — exploration créative des techniques de montage et de post-production.</p>
+                        <div class="video-tags">
+                            <span>TAV</span>
+                            <span>Post-production</span>
+                            <span>Créatif</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-tag">04 // COLLABORATION</span>
+                <h2 class="section-title">Travaillons <span class="text-gradient">ensemble</span></h2>
+                <p class="section-subtitle">Vous avez un projet en tête ? N'hésitez pas à me contacter !</p>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info" data-animate="fade-right">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>kevinrandrianarivony33@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Localisation</h4>
+                            <p>Antananarivo, Madagascar</p>
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4>Téléphone</h4>
+                            <p>+261 34 38 262 79</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" data-animate="fade-left" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nom complet</label>
+                        <input type="text" id="name" name="name" placeholder="Votre nom..." required>
+                        <div class="input-highlight"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="votre@email.com" required>
+                        <div class="input-highlight"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Sujet</label>
+                        <input type="text" id="subject" name="subject" placeholder="Sujet de votre message..." required>
+                        <div class="input-highlight"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Décrivez votre projet..." required></textarea>
+                        <div class="input-highlight"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <span>Envoyer le message</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-bracket">&lt;</span>RKS<span class="logo-bracket">/&gt;</span>
+                </div>
+                <p class="footer-text">
+                    &copy; 2026 RANDRIANARIVONY Kevin Stephano. Tous droits réservés.
+                </p>
+                <div class="footer-links">
+                    <a href="#hero">Accueil</a>
+                    <a href="#about">À propos</a>
+                    <a href="#services">Services</a>
+                    <a href="#montage">Montage</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
